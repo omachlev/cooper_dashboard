@@ -45,6 +45,9 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies', 'ngTouch',
       .theme('default')
         .primaryPalette('grey', {
           'default': '600'
+              //.primaryPalette('grey', {
+              //  'default': '600'
+
         })
         .accentPalette('teal', {
           'default': '500'
@@ -59,8 +62,11 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies', 'ngTouch',
       .primaryPalette('grey');
 
     $mdThemingProvider.theme('custom', 'default')
-      .primaryPalette('defaultPrimary', {
-        'hue-1': '50'
+        .primaryPalette('defaultPrimary', {
+          'hue-1': '50'
+
+      //.primaryPalette('defaultPrimary', {
+      //  'hue-1': '50'
     });
 
     $mdThemingProvider.definePalette('defaultPrimary', {

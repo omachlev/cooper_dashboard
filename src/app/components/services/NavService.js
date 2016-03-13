@@ -15,12 +15,17 @@
         sref: '.dashboard'
       },
       {
-        name: 'Profile',
-        icon: 'person',
+        name: 'Alerts',
+        icon: 'list',
         sref: '.profile'
       },
       {
-        name: 'Table',
+        name: 'Data Centers',
+        icon: 'laptop',
+        sref: '.profile'
+      },
+      {
+        name: 'Advisories',
         icon: 'view_module',
         sref: '.table'
       }
