@@ -17,12 +17,13 @@
                 x: function (d) { return d[0] },
                 y: function (d) { return d[1] },
                 showLabels: false,
-                showLegend: false,
+                showLegend: true,
                 title: 'Over 9K',
-                showYAxis: false,
-                showXAxis: false,
-                color: ['rgb(0, 150, 136)', 'rgb(204, 203, 203)', 'rgb(149, 149, 149)', 'rgb(44, 44, 44)'],
-                tooltip: { contentGenerator: function (d) { return '<div class="custom-tooltip">' + d.point.y + '%</div>' + '<div class="custom-tooltip">' + d.series[0].key + '</div>' } },
+                showYAxis: true,
+                showXAxis: true,
+                //color: ['rgb(0, 150, 136)', 'rgb(204, 203, 203)', 'rgb(149, 149, 149)', 'rgb(44, 44, 44)'],
+                color: ['#4265a9', '#4ca6a9','#4c6079'],
+                tooltip: { contentGenerator: function (d) { return '<div class="custom-tooltip">' + d.point.y + '</div>' + '<div class="custom-tooltip">' + d.series[0].key + '</div>' } },
                 showControls: false
             }
         };

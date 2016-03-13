@@ -9,7 +9,7 @@
         var vm = this;
 
         // TODO: move data to the service
-        vm.visitorsChartData = [ {key: 'Mobile', y: 5264}, { key: 'Desktop', y: 3872} ];
+        vm.visitorsChartData = [ {key: 'Critical', y: 2}, { key: 'Warning', y: 9},{ key: 'Informative', y: 17} ];
 
         vm.chartOptions = {
             chart: {
@@ -19,10 +19,10 @@
                 x: function (d) { return d.key; },
                 y: function (d) { return d.y; },
                 valueFormat: (d3.format(".0f")),
-                color: ['rgb(0, 150, 136)', '#E75753'],
+                color: ['#E75753', '#d48900','rgb(0, 150, 136)'],
                 showLabels: false,
-                showLegend: false,
-                title: 'Over 9K',
+                showLegend: true,
+                title: '28',
                 margin: { top: -10 }
             }
         };
