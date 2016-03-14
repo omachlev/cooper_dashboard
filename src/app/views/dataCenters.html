@@ -40,12 +40,12 @@ I was unable to fix it. for now, lets use minimal height. I spent four hours on 
 </ng-map>
 
 
-<md-grid-list class="gridListdemoBasicUsage" ng-if="vm.isShowGrid"
+<md-grid-list class="gridListdemoBasicUsage" ng-if="vm.isShowGrid&&vm.dcList"
               md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
               md-row-height-gt-md="1:1" md-row-height="2:2"
               md-gutter="12px" md-gutter-gt-sm="8px">
-    <md-grid-tile class="gray" ng-repeat="dc in vm.dcList"
-                  md-rowspan="1" md-colspan="2" md-colspan-sm="1">
+    <md-grid-tile    ng-repeat="dc in vm.dcList" ng-class="dc.severity"
+                     md-rowspan="1" md-colspan="2" md-colspan-sm="1">
 
         <div layout="column" layout-align="center center">
             <h2 class="md-display-1">Severity: {{dc.severity}}</h2>
@@ -85,11 +85,11 @@ I was unable to fix it. for now, lets use minimal height. I spent four hours on 
         background: #b9f6ca;
     }
 
-    .gridListdemoBasicUsage .yellow {
+    .gridListdemoBasicUsage .Medium {
         background: #ffff8d;
     }
 
-    .gridListdemoBasicUsage .blue {
+    .gridListdemoBasicUsage .Low {
         background: #84ffff;
     }
 
@@ -98,6 +98,10 @@ I was unable to fix it. for now, lets use minimal height. I spent four hours on 
     }
 
     .gridListdemoBasicUsage .red {
+        background: #ff8a80;
+    }
+
+    .gridListdemoBasicUsage .Critical {
         background: #ff8a80;
     }
 

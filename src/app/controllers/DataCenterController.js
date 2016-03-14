@@ -21,6 +21,8 @@
         };
 
         vm.loadData = function (){
+            delete vm.dcList ;
+
             $http({
                 method: 'GET',
                 url: '/app/dc_api_mock.json'
@@ -41,6 +43,7 @@
         vm.showMapView = function(){
             vm.isShowMap = true;
             vm.isShowGrid = false;
+            vm.dcList = [];
             vm.loadData();
 
         }
@@ -48,6 +51,7 @@
         vm.showGridView = function(){
             vm.isShowGrid = true;
             vm.isShowMap = false;
+            vm.dcList = [];
             vm.loadData();
 
         }
