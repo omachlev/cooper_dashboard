@@ -37,7 +37,16 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies', 'ngTouch',
         data: {
           title: 'Table'
         }
-      });
+      })
+        .state('home.table2', {
+          url: '/table2',
+          controller: 'TableController',
+          controllerAs: 'vm',
+          templateUrl: 'app/views/table2.html',
+          data: {
+            title: 'Table2'
+          }
+        });
 
     $urlRouterProvider.otherwise('/dashboard');
 
