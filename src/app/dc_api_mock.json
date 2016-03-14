@@ -1,21 +1,39 @@
 [
   {
-    id: '1',
-    name: 'Times Square',
-    position : [40.759011,-73.984472],
-    alerts: [
-      {error: "error message"}, {error: "error message"}, {error: "error message"}, {error: "error message"}
+    "id": "1",
+    "name": "Times Square",
+    "severity" : "Critical",
+    "position": [
+      40.759011,
+      -73.984472
+    ],
+    "alerts": [
+      {"error": "error message"},{"error": "error message"},{"error": "error message"}
     ]
+  },
 
+  {
+    "id": "2",
+    "name": "Square",
+    "severity" : "Low",
+    "position": [
+      41,-87
+    ],
+    "alerts": [
+      {"error": "error message"} , {"error": "error message"}, {"error": "error message"}, {"error": "error message"}
+    ]
   },
   {
-    id: '2',
-    name: 'Test',
-    position : [41,-87],
-    alerts: [
-      {error: "error message"}, {error: "error message"}, {error: "error message"}, {error: "error message"}
+    "id": "3",
+    "name": "Times Square",
+    "severity" : "Medium",
+    "position": [
+      42,-86
+    ],
+    "alerts": [
+      {"error": "error message"}
     ]
-
   }
+
 
 ]
