@@ -1,0 +1,21 @@
+[
+  {
+    id: '1',
+    name: 'Times Square',
+    position : [40.759011,-73.984472],
+    alerts: [
+      {error: "error message"}, {error: "error message"}, {error: "error message"}, {error: "error message"}
+    ]
+
+  },
+  {
+    id: '2',
+    name: 'Test',
+    position : [41,-87],
+    alerts: [
+      {error: "error message"}, {error: "error message"}, {error: "error message"}, {error: "error message"}
+    ]
+
+  }
+
+]
