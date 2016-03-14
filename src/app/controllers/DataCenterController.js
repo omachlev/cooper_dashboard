@@ -46,8 +46,8 @@
         }
 
         vm.showGridView = function(){
-            vm.isShowMap = false;
             vm.isShowGrid = true;
+            vm.isShowMap = false;
             vm.loadData();
 
         }
