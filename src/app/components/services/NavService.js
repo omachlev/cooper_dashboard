@@ -22,7 +22,7 @@
       {
         name: 'Data Centers',
         icon: 'laptop',
-        sref: '.profile'
+        sref: '.dataCenters'
       },
       {
         name: 'Advisories',

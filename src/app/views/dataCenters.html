@@ -1,0 +1,113 @@
+<!-- I need to fix this one. the height is not set to 100pct because the ui-router turns it down.
+I was unable to fix it. for now, lets use minimal height. I spent four hours on this stupid thing!!!!
+-->
+
+<div layout="row">
+    <md-button layout="column" layout-align="center center"
+               flex class="capitalize my-button" ng-click="vm.showGridView()">
+        <div hide-sm hide-md class="md-tile-content">
+            <i class="material-icons md-36">list</i>
+            Grid View
+        </div>
+    </md-button>
+
+    <md-button layout="column" layout-align="center center"
+               flex class="capitalize my-button" ng-click="vm.showMapView()">
+        <div hide-sm hide-md class="md-tile-content">
+            <i class="material-icons md-36">map</i>
+            Map View
+        </div>
+    </md-button>
+
+</div>
+
+
+<ng-map ng-if="vm.isShowMap" class="dcMap" default-style="false" center="{{vm.dc.position}}" zoom="5">
+    <marker id='{{dc.id}}' position="{{dc.position}}"
+            ng-repeat="dc in vm.dcList"
+            on-click="vm.showDetail(dc)">
+    </marker>
+
+    <info-window id="foo-iw">
+        <div ng-non-bindable="">
+            Id: {{vm.dc.id}}<br/>
+            Name: {{vm.dc.name}}<br/>
+            Alerts: {{vm.dc.alerts.length}}<br/>
+            Severity : {{vm.dc.severity}}<br/>
+            <a href="#" ng-click="vm.clicked()">Click Here</a>
+        </div>
+    </info-window>
+</ng-map>
+
+
+<md-grid-list class="gridListdemoBasicUsage" ng-if="vm.isShowGrid&&vm.dcList"
+              md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
+              md-row-height-gt-md="1:1" md-row-height="2:2"
+              md-gutter="12px" md-gutter-gt-sm="8px">
+    <md-grid-tile    ng-repeat="dc in vm.dcList" ng-class="dc.severity"
+                     md-rowspan="1" md-colspan="2" md-colspan-sm="1">
+
+        <div layout="column" layout-align="center center">
+            <h2 class="md-display-1">Severity: {{dc.severity}}</h2>
+            <h3 class="md-headline">Alerts: {{dc.alerts.length}}</h3>
+        </div>
+        <md-grid-tile-footer>
+            <h3>Name: {{dc.name}}</h3>
+        </md-grid-tile-footer>
+    </md-grid-tile>
+</md-grid-list>
+
+
+<!--<button ng-click="vm.showDetail(e, vm.dc)">-->
+<!--show InfoWindow of the dc-->
+<!--</button>-->
+<!--<button ng-click="vm.hideDetail(e, vm.dc)">-->
+<!--Hide InfoWindow of the dc-->
+<!--</button>-->
+
+
+<style>
+    .dcMap {
+        /*position: absolute;*/
+        width: 100%;
+        height: 800px;
+    }
+
+    .gridListdemoBasicUsage md-grid-list {
+        margin: 8px;
+    }
+
+    .gridListdemoBasicUsage .gray {
+        background: #f5f5f5;
+    }
+
+    .gridListdemoBasicUsage .green {
+        background: #b9f6ca;
+    }
+
+    .gridListdemoBasicUsage .Medium {
+        background: #ffff8d;
+    }
+
+    .gridListdemoBasicUsage .Low {
+        background: #84ffff;
+    }
+
+    .gridListdemoBasicUsage .purple {
+        background: #b388ff;
+    }
+
+    .gridListdemoBasicUsage .red {
+        background: #ff8a80;
+    }
+
+    .gridListdemoBasicUsage .Critical {
+        background: #ff8a80;
+    }
+
+    .gridListdemoBasicUsage md-grid-tile {
+        transition: all 400ms ease-out 50ms;
+    }
+
+</style>
+
