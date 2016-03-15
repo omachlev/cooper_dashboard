@@ -17,7 +17,7 @@
       {
         name: 'Alerts',
         icon: 'list',
-        sref: '.profile'
+        sref: '.table2'
       },
       {
         name: 'Data Centers',

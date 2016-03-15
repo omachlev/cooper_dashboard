@@ -3,30 +3,24 @@
     "id": "1",
     "name": "dc-cal-sf-rm",
     "location": "Richmond, San-Francisco, California",
-    "severity": "Critical",
+    "severity" : "Critical",
     "position": [
-      37.780775,
-      -122.481903
+      37.780775, -122.481903
     ],
     "servers": "252",
-    "alerts": [
-      {
-        "id": "3342",
-        "symptom": "Server may stop responding",
-        "dataCenterId": "1",
-        "impactedServers": [
-          {"serverName": "comp128.rcloud.att.io"},
-          {"serverName": "comp129.rcloud.att.io"},
-          {"serverName": "comp136.rcloud.att.io"}
-        ],
-        "impactedServersAmount": 3,
-        "source": "HP",
-        "advisoryId": "9002232",
-        "proposedSolution": "upgrade the Smart Array controller firmware to version 6.62",
-        "status": "pending",
-        "priority": "high",
-        "date": "2016-03-15"
-      },
+    "alerts": [{
+      "id": "3342",
+      "symptom": "Server may stop responding",
+      "dataCenterId": "1",
+      "impactedServers": [{"serverName": "comp128.rcloud.att.io"},{"serverName": "comp129.rcloud.att.io"},{"serverName": "comp136.rcloud.att.io"}],
+      "impactedServersAmount": 3,
+      "source": "HP",
+      "advisoryId": "9002232",
+      "proposedSolution": "upgrade the Smart Array controller firmware to version 6.62",
+      "status": "pending",
+      "priority": "high",
+      "date": "2016-03-15"
+    },
       {
         "id": "3349",
         "symptom": "Host May Fail and Display a Purple Diagnostics Screen",
@@ -41,50 +35,243 @@
         "date": "2016-03-14"
       }
     ]
+
+  },
+  {
+    "id": "2",
+    "name": "dc-cal-sj-wv",
+    "location": "West Valley, San Jose, California",
+    "severity" : "Critical",
+    "position": [
+      37.305201, -121.979926
+    ],
+    "servers": "180",
+    "alerts": [{
+      "id": "3342",
+      "symptom": "Server may stop responding",
+      "dataCenterId": "2",
+      "impactedServers": [{"serverName": "cpd04.nw.att.io"}],
+      "impactedServersAmount": 1,
+      "source": "HP",
+      "advisoryId": "9002232",
+      "proposedSolution": "upgrade the Smart Array controller firmware to version 6.62",
+      "status": "pending",
+      "priority": "high",
+      "date": "2016-03-15"
+    },
+      {
+        "id": "3355",
+        "symptom": "Virtual Machines May Fail to PXE Boot",
+        "dataCenterId": "2",
+        "impactedServers": [{"serverName": "cpd02.rcloud.att.io"}],
+        "impactedServersAmount": 1,
+        "source": "HP",
+        "advisoryId": "9002299",
+        "proposedSolution": "HP NC55x adapter be updated",
+        "status": "pending",
+        "priority": "high",
+        "date": "2016-03-16"
+      }
+    ]
+
   },
 
   {
-    "id": "2",
-    "name": "dc-cal-sf-rm",
-    "location": "Richmond, San-Francisco, California",
-    "severity": "Critical",
+    "id": "3",
+    "name": "dc-cal-la-sm",
+    "location": "Santa Monica, Loas Angeles, California",
+    "severity" : "Medium",
     "position": [
-      38.780775,
-      -121.481903
+      34.019581, -118.480421
     ],
-    "servers": "252",
-    "alerts": [
+    "servers": "336",
+    "alerts": [{
+      "id": "3220",
+      "symptom": "Random Packet Loss on ProLiant Server Blades",
+      "dataCenterId": "3",
+      "impactedServers": [{"serverName": "ccrdf03.la.att.io"},{"serverName": "ccrdf08.la.att.io"}],
+      "impactedServersAmount": 2,
+      "source": "HP",
+      "advisoryId": "90031002",
+      "proposedSolution": "This issue is corrected in the following components: ...",
+      "status": "pending",
+      "priority": "medium",
+      "date": "2016-03-16"
+    } ]
+  },
+
+  {
+    "id": "4",
+    "name": "dc-cal-sr-ra",
+    "location": "Guemeville Rd, Santa Rosa, California",
+    "severity" : "Low",
+    "position": [
+      38.458846, -122.733100
+    ],
+    "servers": "456",
+    "alerts": [{
+      "id": "3276",
+      "symptom": "Command Line Interface Reports Incorrect Exit Code",
+      "dataCenterId": "4",
+      "impactedServers": [{"serverName": "svr993.pa.att.io"},{"serverName": "svr951.pa.att.io"},{"serverName": "svr957.pa.att.io"},{"serverName": "svr956.pa.att.io"},{"serverName": "svr953.pa.att.io"},{"serverName": "svr904.pa.att.io"}],
+      "impactedServersAmount": 6,
+      "source": "DELL",
+      "advisoryId": "9002109",
+      "proposedSolution": "This issue is corrected in Smart Update Manager 7.21",
+      "status": "pending",
+      "priority": "low",
+      "date": "2016-03-11"
+    },
       {
-        "id": "3342",
-        "symptom": "Server may stop responding",
-        "dataCenterId": "1",
-        "impactedServers": [
-          {"serverName": "comp128.rcloud.att.io"},
-          {"serverName": "comp129.rcloud.att.io"},
-          {"serverName": "comp136.rcloud.att.io"}
-        ],
-        "impactedServersAmount": 3,
-        "source": "HP",
-        "advisoryId": "9002232",
-        "proposedSolution": "upgrade the Smart Array controller firmware to version 6.62",
-        "status": "pending",
-        "priority": "high",
-        "date": "2016-03-15"
-      },
-      {
-        "id": "3349",
-        "symptom": "Host May Fail and Display a Purple Diagnostics Screen",
-        "dataCenterId": "1",
-        "impactedServers": [{"serverName": "comp097.rcloud.att.io"}],
+        "id": "3266",
+        "symptom": "Component Package May Display Message During Installation",
+        "dataCenterId": "4",
+        "impactedServers": [{"serverName": "svr882.pa.att.io"}],
         "impactedServersAmount": 1,
         "source": "HP",
-        "advisoryId": "9002208",
-        "proposedSolution": "upgrade the hpsa driver to version 5.5.0-74 (or later) ",
+        "advisoryId": "9002125",
+        "proposedSolution": "This issue is corrected in the HP Intel ixn/ixt Drivers for Windows Server",
         "status": "pending",
-        "priority": "high",
-        "date": "2016-03-14"
-      }
-    ]
+        "priority": "low",
+        "date": "2016-03-10"
+      }]
+
+  },
+
+  {
+    "id": "5",
+    "name": "dc-cal-fr-hc",
+    "location": "Highway City, Fresno, California",
+    "severity" : "Low",
+    "position": [
+      36.811515, -119.883847
+    ],
+    "servers": "223",
+    "alerts": [{
+      "id": "3276",
+      "symptom": "Command Line Interface Reports Incorrect Exit Code",
+      "dataCenterId": "5",
+      "impactedServers": [{"serverName": "svr993.pa.att.io"},{"serverName": "svr951.pa.att.io"},{"serverName": "svr957.pa.att.io"},{"serverName": "svr956.pa.att.io"},{"serverName": "svr953.pa.att.io"},{"serverName": "svr904.pa.att.io"}],
+      "impactedServersAmount": 6,
+      "source": "DELL",
+      "advisoryId": "9002109",
+      "proposedSolution": "This issue is corrected in Smart Update Manager 7.21",
+      "status": "pending",
+      "priority": "low",
+      "date": "2016-03-11"
+    }]
+
+  },
+
+  {
+    "id": "6",
+    "name": "dc-cal-sd-cv",
+    "location": "Carmel Valley, San Diego, California",
+    "severity" : "Low",
+    "position": [
+      32.936344, -117.202972
+    ],
+    "servers": "211",
+    "alerts": [{
+      "id": "3276",
+      "symptom": "Command Line Interface Reports Incorrect Exit Code",
+      "dataCenterId": "6",
+      "impactedServers": [{"serverName": "svr993.pa.att.io"}],
+      "impactedServersAmount": 1,
+      "source": "DELL",
+      "advisoryId": "9002109",
+      "proposedSolution": "This issue is corrected in Smart Update Manager 7.21",
+      "status": "pending",
+      "priority": "low",
+      "date": "2016-03-11"
+    }]
+
+  },
+
+  {
+    "id": "7",
+    "name": "dc-cal-pa-su",
+    "location": "Stanford University, Palo Alto, California",
+    "severity" : "Stable",
+    "position": [
+      37.430610, -122.169467
+    ],
+    "servers": "266",
+    "alerts": []
+
+  },
+  {
+    "id": "8",
+    "name": "dc-nv-lv-sc",
+    "location": "Sun City, Las Vegas, Nevada",
+    "severity" : "Stable",
+    "position": [
+      36.209730, -115.310274
+    ],
+    "servers": "432",
+    "alerts": []
+
+  },
+  {
+    "id": "9",
+    "name": "dc-cal-sa-pw",
+    "location": "Point West Sacramento, California",
+    "severity" : "Stable",
+    "position": [
+      38.597752, -121.436734
+    ],
+    "servers": "365",
+    "alerts": []
+
+  },
+  {
+    "id": "10",
+    "name": "dc-nv-re-un",
+    "location": "University of Nevada, Reno, Nevada",
+    "severity" : "Stable",
+    "position": [
+      39.543916, -119.815878
+    ],
+    "servers": "435",
+    "alerts": []
+
+  },
+  {
+    "id": "11",
+    "name": "dc-az-tu-ua",
+    "location": "University of Arizona, Tucson, Arizona",
+    "severity" : "Stable",
+    "position": [
+      32.234462, -110.948579
+    ],
+    "servers": "168",
+    "alerts": []
+
+  },
+  {
+    "id": "12",
+    "name": "dc-az-ph-gcu",
+    "location": "Grand Canyon University, Poenix, Arizona",
+    "severity" : "Stable",
+    "position": [
+      33.509941, -112.123519
+    ],
+    "servers": "257",
+    "alerts": []
+
+  },
+  {
+    "id": "13",
+    "name": "dc-ut-slc-cc",
+    "location": "Central City, Salt Lake City, Utah",
+    "severity" : "Stable",
+    "position": [
+      40.758006, -111.875126
+    ],
+    "servers": "297",
+    "alerts": []
+
   }
+
 
 ]
