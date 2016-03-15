@@ -41,7 +41,7 @@
               md-row-height-gt-md="1:1" md-row-height="2:2"
               md-gutter="12px" md-gutter-gt-sm="8px">
     <md-grid-tile ng-repeat="dc in vm.dcList" ng-class="dc.severity" ng-click="vm.showAlertView(dc)"
-                  md-rowspan="1" md-colspan="2" md-colspan-sm="1">
+                  md-rowspan="1" md-colspan="1" md-colspan-sm="1">
 
         <div layout="column" layout-align="center center">
             <h2 class="md-display-1">Severity: {{dc.severity}}</h2>
@@ -142,9 +142,7 @@
         margin: 8px;
     }
 
-    .gridListdemoBasicUsage .gray {
-        background: #f5f5f5;
-    }
+
 
     .gridListdemoBasicUsage .Stable {
         background: #b9f6ca;
@@ -154,8 +152,17 @@
         background: #ffff8d;
     }
 
+
+    .gridListdemoBasicUsage .Critical {
+        background: #ff8a80;
+    }
+
     .gridListdemoBasicUsage .Low {
         background: #84ffff;
+    }
+
+    .gridListdemoBasicUsage .gray {
+        background: #f5f5f5;
     }
 
     .gridListdemoBasicUsage .purple {
@@ -166,9 +173,6 @@
         background: #ff8a80;
     }
 
-    .gridListdemoBasicUsage .Critical {
-        background: #ff8a80;
-    }
 
     .gridListdemoBasicUsage md-grid-tile {
         transition: all 400ms ease-out 50ms;
