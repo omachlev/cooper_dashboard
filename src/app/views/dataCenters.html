@@ -1,7 +1,3 @@
-<!-- I need to fix this one. the height is not set to 100pct because the ui-router turns it down.
-I was unable to fix it. for now, lets use minimal height. I spent four hours on this stupid thing!!!!
--->
-
 <div layout="row">
     <md-button layout="column" layout-align="center center"
                flex class="capitalize my-button" ng-click="vm.showGridView()">
@@ -34,7 +30,7 @@ I was unable to fix it. for now, lets use minimal height. I spent four hours on 
             Name: {{vm.dc.name}}<br/>
             Alerts: {{vm.dc.alerts.length}}<br/>
             Severity : {{vm.dc.severity}}<br/>
-            <a href="#" ng-click="vm.clicked()">Click Here</a>
+            <a href="#" ng-click="vm.showAlertView(vm.dc)">Click Here</a>
         </div>
     </info-window>
 </ng-map>
@@ -44,12 +40,19 @@ I was unable to fix it. for now, lets use minimal height. I spent four hours on 
               md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
               md-row-height-gt-md="1:1" md-row-height="2:2"
               md-gutter="12px" md-gutter-gt-sm="8px">
-    <md-grid-tile    ng-repeat="dc in vm.dcList" ng-class="dc.severity"
-                     md-rowspan="1" md-colspan="2" md-colspan-sm="1">
+    <md-grid-tile ng-repeat="dc in vm.dcList" ng-class="dc.severity"
+                  md-rowspan="1" md-colspan="2" md-colspan-sm="1">
 
         <div layout="column" layout-align="center center">
             <h2 class="md-display-1">Severity: {{dc.severity}}</h2>
-            <h3 class="md-headline">Alerts: {{dc.alerts.length}}</h3>
+
+            <h3 class="md-headline">
+                <a href="#" ng-click="vm.showAlertView(dc)">
+                    Alerts: {{dc.alerts.length}}
+                </a>
+            </h3>
+
+
         </div>
         <md-grid-tile-footer>
             <h3>Name: {{dc.name}}</h3>
@@ -58,15 +61,46 @@ I was unable to fix it. for now, lets use minimal height. I spent four hours on 
 </md-grid-list>
 
 
-<!--<button ng-click="vm.showDetail(e, vm.dc)">-->
-<!--show InfoWindow of the dc-->
-<!--</button>-->
-<!--<button ng-click="vm.hideDetail(e, vm.dc)">-->
-<!--Hide InfoWindow of the dc-->
-<!--</button>-->
+
+<div ng-if="!vm.isShowGrid&&!vm.isShowMap" class=" md-whiteframe-z1" id="alertView">
+    <div layout="row" style="background: white" layout-align="center center">
+        <h2 class="md-display-1">Data Center: {{vm.dc.name}}</h2>
+    </div>
+
+    <table id="table" class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th>Status</th>
+            <th>Priority</th>
+            <th>Source</th>
+            <th>Impacted Servers</th>
+            <th>Symptom</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="alert in vm.dc.alerts track by $index" ng-click="vm.showAlertWindow($event, alert)" ng-class-odd="'odd'" ng-class-even="'even'">
+            <td data-title="Status">{{alert.status}}</td>
+            <td data-title="Priority">{{alert.priority}}</td>
+            <td data-title="Source">{{alert.source}}</td>
+            <td data-title="Impacted Servers">{{alert.impactedServersAmount}}</td>
+            <td data-title="Symptom">{{alert.symptom}}</td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 
 <style>
+    .odd {
+        background-color: #3F51B5;
+        color: white
+    }
+    .even {
+        background-color: #616161;
+        color: white
+    }
+
     .dcMap {
         /*position: absolute;*/
         width: 100%;

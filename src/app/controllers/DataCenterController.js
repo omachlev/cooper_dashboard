@@ -1,27 +1,37 @@
 (function () {
     angular
         .module('app')
-        .controller('DataCenterController', [ '$rootScope','$scope','NgMap','$http',
+        .controller('DataCenterController', ['$rootScope', '$scope', 'NgMap', '$http', '$mdDialog',
             DataCenterController
         ]);
 
-    function DataCenterController($rootScope,$scope, NgMap,$http) {
+    function DataCenterController($rootScope, $scope, NgMap, $http, $mdDialog) {
 
         var vm = this;
         vm.isShowMap = true;
         vm.isShowGrid = false;
 
-        NgMap.getMap().then(function(map) {
+        NgMap.getMap().then(function (map) {
             console.log('map', map);
             vm.map = map;
         });
 
-        vm.clicked = function() {
-            alert('add code to redirect to data center detailed view');
-        };
+        vm.showAlertWindow = function (ev, alert) {
+            console.log('test')
+            $mdDialog.show(
+                $mdDialog.alert()
+                    .parent(angular.element(document.querySelector('#alertView')))
+                    .clickOutsideToClose(true)
+                    .title('Proposed Solution')
+                    .content(alert.proposedSolution)
+                    .ariaLabel('Proposed Solution')
+                    .ok('Confirm')
+                    .targetEvent(ev)
+            );
+        }
 
-        vm.loadData = function (){
-            delete vm.dcList ;
+        vm.loadData = function () {
+            delete vm.dcList;
 
             $http({
                 method: 'GET',
@@ -39,8 +49,7 @@
             });
         }
 
-
-        vm.showMapView = function(){
+        vm.showMapView = function () {
             vm.isShowMap = true;
             vm.isShowGrid = false;
             vm.dcList = [];
@@ -48,7 +57,7 @@
 
         }
 
-        vm.showGridView = function(){
+        vm.showGridView = function () {
             vm.isShowGrid = true;
             vm.isShowMap = false;
             vm.dcList = [];
@@ -57,15 +66,21 @@
         }
         vm.dcList = [];
 
-        vm.showDetail = function(e, dc) {
+        vm.showDetail = function (e, dc) {
             vm.dc = dc;
             vm.map.showInfoWindow('foo-iw', dc.id);
         };
 
-        vm.hideDetail = function() {
+        vm.hideDetail = function () {
             vm.map.hideInfoWindow('foo-iw');
         };
 
+        vm.showAlertView = function (dcData) {
+            vm.isShowGrid = false;
+            vm.isShowMap = false;
+            console.log('show alert list for ' + dcData.id);
+
+        }
         vm.loadData();
     }
 
