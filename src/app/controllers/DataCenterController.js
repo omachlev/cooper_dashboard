@@ -79,6 +79,7 @@
             vm.isShowGrid = false;
             vm.isShowMap = false;
             console.log('show alert list for ' + dcData.id);
+            vm.dc = dcData;
 
         }
         vm.loadData();

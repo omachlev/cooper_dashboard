@@ -40,34 +40,63 @@
               md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
               md-row-height-gt-md="1:1" md-row-height="2:2"
               md-gutter="12px" md-gutter-gt-sm="8px">
-    <md-grid-tile ng-repeat="dc in vm.dcList" ng-class="dc.severity"
+    <md-grid-tile ng-repeat="dc in vm.dcList" ng-class="dc.severity" ng-click="vm.showAlertView(dc)"
                   md-rowspan="1" md-colspan="2" md-colspan-sm="1">
 
         <div layout="column" layout-align="center center">
             <h2 class="md-display-1">Severity: {{dc.severity}}</h2>
 
             <h3 class="md-headline">
-                <a href="#" ng-click="vm.showAlertView(dc)">
-                    Alerts: {{dc.alerts.length}}
-                </a>
+                Alerts: {{dc.alerts.length}}
             </h3>
-
+            <h3 class="md-headline">
+                Servers: {{dc.servers}}
+            </h3>
 
         </div>
         <md-grid-tile-footer>
-            <h3>Name: {{dc.name}}</h3>
+            <h3>Name: {{dc.name}} | Location: {{dc.location}} </h3>
         </md-grid-tile-footer>
     </md-grid-tile>
 </md-grid-list>
 
 
-
-<div ng-if="!vm.isShowGrid&&!vm.isShowMap" class=" md-whiteframe-z1" id="alertView">
+<div ng-if="!vm.isShowGrid&&!vm.isShowMap" id="alertView">
     <div layout="row" style="background: white" layout-align="center center">
-        <h2 class="md-display-1">Data Center: {{vm.dc.name}}</h2>
+        <h2 class="md-display-1">Data Center Name: {{vm.dc.name}}</h2>
+
+
     </div>
 
-    <table id="table" class="table table-hover table-bordered">
+    <table id="tablex" class="table " layout-align="center center">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Location</th>
+            <th>Servers</th>
+            <th>Severity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td data-title="Status">{{vm.dc.id}}</td>
+            <td data-title="Location">{{vm.dc.location}}</td>
+            <td data-title="Servers">{{vm.dc.servers}}</td>
+            <td data-title="Severity Servers">{{vm.dc.severity}}</td>
+
+
+        </tr>
+        </tbody>
+    </table>
+
+    <div layout="row" style="background: white;margin-bottom: 5px;margin-top: 5px" layout-align="center center" ng-show="!vm.dc.alerts|| vm.dc.alerts.length == 0" >
+
+            <h3 class="md-headline">This Data Center doesn't have any Alerts!</h3>
+
+    </div>
+
+
+    <table id="table" class="table table-hover table-bordered" ng-show="vm.dc.alerts&& vm.dc.alerts.length > 0">
         <thead>
         <tr>
             <th>Status</th>
@@ -78,7 +107,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="alert in vm.dc.alerts track by $index" ng-click="vm.showAlertWindow($event, alert)" ng-class-odd="'odd'" ng-class-even="'even'">
+        <tr ng-repeat="alert in vm.dc.alerts track by $index" ng-click="vm.showAlertWindow($event, alert)"
+            ng-class-odd="'odd'" ng-class-even="'even'">
             <td data-title="Status">{{alert.status}}</td>
             <td data-title="Priority">{{alert.priority}}</td>
             <td data-title="Source">{{alert.source}}</td>
@@ -96,6 +126,7 @@
         background-color: #3F51B5;
         color: white
     }
+
     .even {
         background-color: #616161;
         color: white
@@ -115,7 +146,7 @@
         background: #f5f5f5;
     }
 
-    .gridListdemoBasicUsage .green {
+    .gridListdemoBasicUsage .Stable {
         background: #b9f6ca;
     }
 
