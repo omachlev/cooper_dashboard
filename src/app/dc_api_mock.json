@@ -26,25 +26,25 @@
     "date": "2016-03-15"
   },
     {
-      "id": "3349",
-      "symptom": "System May Stop Responding",
-      "symptomDescription": "ProLiant Servers - System May Stop Responding on a Server Configured With an HP H220 Host Bus Adapter (HBA) Attached to a Hard Disk Drive (HDD) With HDD Model Numbers MB2000FCZGH, MB3000FCZGK, or MB4000FCZGL",
 
-      "dataCenterId": "1",
-      "impactedServers": [{"serverName": "comp097.rcloud.att.io"}],
-      "impactedServersAmount": 1,
-      "source": "HP",
-      "advisoryId": "9002208",
-      "proposedSolution": "Resolved in HDD firmware version HPD6",
-      "solutionSteps": "This issue is resolved in HDD firmware version HPD6, available as RECOMMENDED * Supplemental Update / Online ROM Flash Component for Linux (x64) - MB2000FCZGH, MB3000FCZGK, and MB4000FCZGL Drives at the following URL: ftp://ftp.hp.com/pub/softlib2/software1/sc-linux-fw/p1884236067/v106970",
+        "id": "3349",
+        "symptom": "System May Stop Responding",
+        "symptomDescription": "ProLiant Servers - System May Stop Responding on a Server Configured With an HP H220 Host Bus Adapter (HBA) Attached to a Hard Disk Drive (HDD) With HDD Model Numbers MB2000FCZGH, MB3000FCZGK, or MB4000FCZGL",
 
-      "status": "pending",
-      "priority": "high",
-      "date": "2016-03-14"
-    }
-  ]
+        "dataCenterId": "1",
+        "impactedServers": [{"serverName": "comp097.rcloud.att.io"}],
+        "impactedServersAmount": 1,
+        "source": "HP",
+        "advisoryId": "9002208",
+        "proposedSolution": "Resolved in HDD firmware version HPD6",
+        "solutionSteps": "This issue is resolved in HDD firmware version HPD6, available as RECOMMENDED * Supplemental Update / Online ROM Flash Component for Linux (x64) - MB2000FCZGH, MB3000FCZGK, and MB4000FCZGL Drives at the following URL: ftp://ftp.hp.com/pub/softlib2/software1/sc-linux-fw/p1884236067/v106970",
+        "status": "pending",
+        "priority": "high",
+        "date": "2016-03-14"
+      }
+    ]
 
-},
+  },
   {
     "id": "2",
     "name": "dc-cal-sj-wv",
