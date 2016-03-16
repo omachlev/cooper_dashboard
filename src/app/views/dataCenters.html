@@ -44,7 +44,7 @@
                   md-rowspan="1" md-colspan="1" md-colspan-sm="1">
 
         <div layout="column" layout-align="center center">
-            <h2 class="md-display-1">Severity: {{dc.severity}}</h2>
+            <h2 style="margin: 0" class="md-display-1">Severity: {{dc.severity}}</h2>
 
             <h3 class="md-headline">
                 Alerts: {{dc.alerts.length}}
@@ -55,7 +55,8 @@
 
         </div>
         <md-grid-tile-footer>
-            <h3>Name: {{dc.name}} | Location: {{dc.location}} </h3>
+            <h3>Name: {{dc.name}}  </h3>
+            <h3>Location: {{dc.location}} </h3>
         </md-grid-tile-footer>
     </md-grid-tile>
 </md-grid-list>
@@ -64,8 +65,6 @@
 <div ng-if="!vm.isShowGrid&&!vm.isShowMap" id="alertView">
     <div layout="row" style="background: white" layout-align="center center">
         <h2 class="md-display-1">Data Center Name: {{vm.dc.name}}</h2>
-
-
     </div>
 
     <table id="tablex" class="table " layout-align="center center">
