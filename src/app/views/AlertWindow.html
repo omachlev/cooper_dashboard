@@ -1,0 +1,35 @@
+<md-dialog aria-label="Alert Info {{alertInfo.id}}" ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Alert Details({{alertInfo.id}})</h2>
+                <span flex></span>
+
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <h2>{{alertInfo.symptom}}</h2>
+                <p>
+                   {{alertInfo.symptomDescription}}
+                </p>
+
+                <h2>{{alertInfo.proposedSolution}}</h2>
+                <p>
+                    {{alertInfo.solutionSteps}}
+                </p>
+
+
+
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+
+            <span flex></span>
+            <md-button ng-click="answer('Ok')">
+                Close
+            </md-button>
+
+        </md-dialog-actions>
+    </form>
+</md-dialog>

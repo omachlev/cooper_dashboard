@@ -41,15 +41,15 @@
               md-row-height-gt-md="1:1" md-row-height="2:2"
               md-gutter="12px" md-gutter-gt-sm="8px">
     <md-grid-tile ng-repeat="dc in vm.dcList" ng-class="dc.severity" ng-click="vm.showAlertView(dc)"
-                  md-rowspan="1" md-colspan="1" md-colspan-sm="1">
+                  md-rowspan="1" md-colspan="2" md-colspan-sm="1">
 
         <div layout="column" layout-align="center center">
-            <h2 style="margin: 0" class="md-display-1">Severity: {{dc.severity}}</h2>
+            <h2 style="margin: 0 0 " class="md-display-1">Severity: {{dc.severity}}</h2>
 
-            <h3 class="md-headline">
+            <h3 class="md-headline" style="margin: 0 0 ">
                 Alerts: {{dc.alerts.length}}
             </h3>
-            <h3 class="md-headline">
+            <h3 class="md-headline" style="margin: 0 0 ">
                 Servers: {{dc.servers}}
             </h3>
 
@@ -63,17 +63,17 @@
 
 
 <div ng-if="!vm.isShowGrid&&!vm.isShowMap" id="alertView">
-    <div layout="row" style="background: white" layout-align="center center">
+    <div layout="row" style="background: #B0BEC5;color:white" layout-align="center center">
         <h2 class="md-display-1">Data Center Name: {{vm.dc.name}}</h2>
     </div>
 
-    <table id="tablex" class="table " layout-align="center center">
+    <table id="tablex" class="table " layout-align="center center" style="background: #B0BEC5;color:white">
         <thead>
         <tr>
-            <th>Id</th>
-            <th>Location</th>
-            <th>Servers</th>
-            <th>Severity</th>
+            <th style="color:white">Id</th>
+            <th style="color:white">Location</th>
+            <th style="color:white">Servers</th>
+            <th style="color:white">Severity</th>
         </tr>
         </thead>
         <tbody>
@@ -95,18 +95,18 @@
     </div>
 
 
-    <table id="table" class="table table-hover table-bordered" ng-show="vm.dc.alerts&& vm.dc.alerts.length > 0">
+    <table id="table" class="table table-hover table-bordered" ng-show="vm.dc.alerts&& vm.dc.alerts.length > 0" style="background: #B0BEC5;color:white">
         <thead>
         <tr>
-            <th>Status</th>
-            <th>Priority</th>
-            <th>Source</th>
-            <th>Impacted Servers</th>
-            <th>Symptom</th>
+            <th style="color:white">Status</th>
+            <th style="color:white">Priority</th>
+            <th style="color:white">Source</th>
+            <th style="color:white">Impacted Servers</th>
+            <th style="color:white">Symptom</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="alert in vm.dc.alerts track by $index" ng-click="vm.showAlertWindow($event, alert)"
+        <tr ng-repeat="alert in vm.dc.alerts track by $index" ng-click="showFullAlertWindow($event, alert)"
             ng-class-odd="'odd'" ng-class-even="'even'">
             <td data-title="Status">{{alert.status}}</td>
             <td data-title="Priority">{{alert.priority}}</td>
@@ -122,12 +122,12 @@
 
 <style>
     .odd {
-        background-color: #3F51B5;
+        background-color: #E75753;
         color: white
     }
 
     .even {
-        background-color: #616161;
+        background-color: #E75753;
         color: white
     }
 
