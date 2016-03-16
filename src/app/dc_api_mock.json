@@ -1,35 +1,43 @@
 [
   {
-    "id": "1",
-    "name": "dc-cal-sf-rm",
-    "location": "Richmond, San-Francisco, California",
-    "severity" : "Critical",
-    "position": [
-      37.780775, -122.481903
-    ],
-    "servers": "252",
-    "alerts": [{
-      "id": "3342",
-      "symptom": "Server may stop responding",
-      "dataCenterId": "1",
-      "impactedServers": [{"serverName": "comp128.rcloud.att.io"},{"serverName": "comp129.rcloud.att.io"},{"serverName": "comp136.rcloud.att.io"}],
-      "impactedServersAmount": 3,
-      "source": "HP",
-      "advisoryId": "9002232",
-      "proposedSolution": "upgrade the Smart Array controller firmware to version 6.62",
-      "status": "pending",
-      "priority": "high",
-      "date": "2016-03-15"
-    },
-      {
+  "id": "1",
+  "name": "dc-cal-sf-rm",
+  "location": "Richmond, San-Francisco, California",
+  "severity" : "Critical",
+  "position": [
+    37.780775, -122.481903
+  ],
+  "servers": "252",
+  "alerts": [{
+    "id": "3342",
+    "symptom": "VMware Host May Fail and Display a Purple Diagnostics Screen",
+    "symptomDescription": "VMware ESXi 5.5 or 6.0 - VMware Host May Fail and Display a Purple Diagnostics Screen and the Message - PCPU x Locked Up. Failed to ack TLB Invalidate - on Servers Configured With Certain Smart Array Controllers",
+
+    "dataCenterId": "1",
+    "impactedServers": [{"serverName": "comp128.rcloud.att.io"},{"serverName": "comp129.rcloud.att.io"},{"serverName": "comp136.rcloud.att.io"}],
+    "impactedServersAmount": 3,
+    "source": "HP",
+    "advisoryId": "9002232",
+    "proposedSolution": "upgrade the Smart Array controller firmware to version 6.62",
+    "solutionSteps": "To prevent this issue from occurring or to correct this issue if it has already occurred, upgrade the Smart Array controller firmware to version 6.62 AND upgrade the hpsa driver to version 5.5.0-74 (or later) as follows: Smart Array Controller firmware for VMware ESXi: ftp://ftp.hp.com/pub/softlib2/software1/sc-linux-fw-array/p431244090/v105155 ACCESS DENIED ERRORS: Click Here if You Encounter Access Denied Errors with the FTP link The hpsa driver version 5.5.0-74 is available at the following URL: http://vibsdepot.hp.com/hpq/sep2014/esxi-550-devicedrivers/hpsa-500-5.0.0-2043343.zip",
+
+    "status": "pending",
+    "priority": "high",
+    "date": "2016-03-15"
+  },
+    {
+
         "id": "3349",
-        "symptom": "Host May Fail and Display a Purple Diagnostics Screen",
+        "symptom": "System May Stop Responding",
+        "symptomDescription": "ProLiant Servers - System May Stop Responding on a Server Configured With an HP H220 Host Bus Adapter (HBA) Attached to a Hard Disk Drive (HDD) With HDD Model Numbers MB2000FCZGH, MB3000FCZGK, or MB4000FCZGL",
+
         "dataCenterId": "1",
         "impactedServers": [{"serverName": "comp097.rcloud.att.io"}],
         "impactedServersAmount": 1,
         "source": "HP",
         "advisoryId": "9002208",
-        "proposedSolution": "upgrade the hpsa driver to version 5.5.0-74 (or later) ",
+        "proposedSolution": "Resolved in HDD firmware version HPD6",
+        "solutionSteps": "This issue is resolved in HDD firmware version HPD6, available as RECOMMENDED * Supplemental Update / Online ROM Flash Component for Linux (x64) - MB2000FCZGH, MB3000FCZGK, and MB4000FCZGL Drives at the following URL: ftp://ftp.hp.com/pub/softlib2/software1/sc-linux-fw/p1884236067/v106970",
         "status": "pending",
         "priority": "high",
         "date": "2016-03-14"
@@ -47,14 +55,18 @@
     ],
     "servers": "180",
     "alerts": [{
-      "id": "3342",
-      "symptom": "Server may stop responding",
+      "id": "3349",
+      "symptom": "System May Stop Responding",
+      "symptomDescription": "ProLiant Servers - System May Stop Responding on a Server Configured With an HP H220 Host Bus Adapter (HBA) Attached to a Hard Disk Drive (HDD) With HDD Model Numbers MB2000FCZGH, MB3000FCZGK, or MB4000FCZGL",
+
       "dataCenterId": "2",
       "impactedServers": [{"serverName": "cpd04.nw.att.io"}],
       "impactedServersAmount": 1,
       "source": "HP",
       "advisoryId": "9002232",
-      "proposedSolution": "upgrade the Smart Array controller firmware to version 6.62",
+      "proposedSolution": "Resolved in HDD firmware version HPD6",
+      "solutionSteps": "This issue is resolved in HDD firmware version HPD6, available as RECOMMENDED * Supplemental Update / Online ROM Flash Component for Linux (x64) - MB2000FCZGH, MB3000FCZGK, and MB4000FCZGL Drives at the following URL: ftp://ftp.hp.com/pub/softlib2/software1/sc-linux-fw/p1884236067/v106970",
+
       "status": "pending",
       "priority": "high",
       "date": "2016-03-15"
@@ -62,12 +74,16 @@
       {
         "id": "3355",
         "symptom": "Virtual Machines May Fail to PXE Boot",
+        "symptomDescription": "NC55x Network Adapters - Virtual Machines (VM) May Fail to PXE Boot in HP ProLiant Server Configurations Running Windows Server 2008 R2 with Hyper-V While Using HP NC55x-Series Network Adapters",
+
         "dataCenterId": "2",
         "impactedServers": [{"serverName": "cpd02.rcloud.att.io"}],
         "impactedServersAmount": 1,
         "source": "HP",
         "advisoryId": "9002299",
         "proposedSolution": "HP NC55x adapter be updated",
+        "solutionSteps": "To allow the Virtual Machines to PXE boot, HP recommends that the HP NC55x adapter be updated using the following supported driver and firmware updates: Firmware image (.iso) for OFFLINE update of HP Emulex 10GbE Converged Network Adapters and 10GbE Network Adapters including server LOMs and Mezz cards - Version: 4.1.450.16. This firmware update is located at the following HP FTP URL: ftp://ftp.hp.com/pub/softlib/software12/COL35717/co-108976-1/OneConnect-Flash-4.1.450.16.iso",
+
         "status": "pending",
         "priority": "high",
         "date": "2016-03-16"
@@ -88,12 +104,16 @@
     "alerts": [{
       "id": "3220",
       "symptom": "Random Packet Loss on ProLiant Server Blades",
+      "symptomDescription":"Windows Server 2012 - Enabling Virtual Machine Queue (VMQ) May Cause Random Packet Loss on ProLiant Server Blades",
+
       "dataCenterId": "3",
       "impactedServers": [{"serverName": "ccrdf03.la.att.io"},{"serverName": "ccrdf08.la.att.io"}],
       "impactedServersAmount": 2,
       "source": "HP",
       "advisoryId": "90031002",
       "proposedSolution": "This issue is corrected in the following components: ...",
+      "solutionSteps": "This issue is corrected in the following components: cp025921.exe - HP Emulex 10/20 GbE Driver for Windows Server 2012, Version 10.2.531.0 cp025922.exe - HP Emulex 10/20 GbE Driver for Windows Server 2012 R2, Version 10.2.531.0 cp024655.exe - HP Firmware Flash for Emulex Converged Network Adapters - Windows (x64) Version 10.2.477.10 These components are available at the following URL: ftp://ftp.hp.com/pub/softlib2/software1/pubsw-generic/p288970157/v106092",
+
       "status": "pending",
       "priority": "medium",
       "date": "2016-03-16"
@@ -112,12 +132,16 @@
     "alerts": [{
       "id": "3276",
       "symptom": "Command Line Interface Reports Incorrect Exit Code",
+      "symptomDescription": "HP Smart Update Manager (HP SUM) 6.x and 7.10 - Command Line Interface (CLI) Update of Virtual Connect Module or HP Onboard Administrator Reports Incorrect Exit Code When Modules Are Up-to-Date",
+
       "dataCenterId": "4",
       "impactedServers": [{"serverName": "svr993.pa.att.io"},{"serverName": "svr951.pa.att.io"},{"serverName": "svr957.pa.att.io"},{"serverName": "svr956.pa.att.io"},{"serverName": "svr953.pa.att.io"},{"serverName": "svr904.pa.att.io"}],
       "impactedServersAmount": 6,
-      "source": "DELL",
+      "source": "HP",
       "advisoryId": "9002109",
       "proposedSolution": "This issue is corrected in Smart Update Manager 7.21",
+      "solutionSteps": "This issue is corrected in HP Smart Update Manager (HP SUM) 7.21, available at the following URLs: HP SUM 7.2.1 Release Notes: http://h20564.www2.hp.com/hpsc/doc/public/display?docId=c04618809 HPSUM 7.2.1 for Windows: ftp://ftp.hp.com/pub/softlib2/software1/pubsw-windows/p1769088790/v106340 HP SUM 7.2.1 Linux rpms: ftp://ftp.hp.com/pub/softlib2/software1/pubsw-linux/p1216536599/v106339",
+
       "status": "pending",
       "priority": "low",
       "date": "2016-03-11"
@@ -125,12 +149,16 @@
       {
         "id": "3266",
         "symptom": "Component Package May Display Message During Installation",
+        "symptomDescription": "HP Intel ixn/ixt Drivers for Windows Server 2008 - Component Package May Display Message During Installation on a Guest Operating System",
+
         "dataCenterId": "4",
         "impactedServers": [{"serverName": "svr882.pa.att.io"}],
         "impactedServersAmount": 1,
         "source": "HP",
         "advisoryId": "9002125",
         "proposedSolution": "This issue is corrected in the HP Intel ixn/ixt Drivers for Windows Server",
+        "solutionSteps": "The virtual network driver will still load after the message is acknowledged. This issue is corrected in the HP Intel ixn/ixt Drivers for Windows Server, available at the following URLs: HP Intel ixn/ixt Drivers for Windows Server 2008: ftp://ftp.hp.com/pub/softlib2/software1/sc-windows/p92542868/v92296 HP Intel ixn/ixt Drivers for Windows Server 2008 x64 Editions: ftp://ftp.hp.com/pub/softlib2/software1/sc-windows/p910160171/v92297",
+
         "status": "pending",
         "priority": "low",
         "date": "2016-03-10"
@@ -150,12 +178,16 @@
     "alerts": [{
       "id": "3276",
       "symptom": "Command Line Interface Reports Incorrect Exit Code",
+      "symptomDescription": "HP Smart Update Manager (HP SUM) 6.x and 7.10 - Command Line Interface (CLI) Update of Virtual Connect Module or HP Onboard Administrator Reports Incorrect Exit Code When Modules Are Up-to-Date",
+
       "dataCenterId": "5",
       "impactedServers": [{"serverName": "svr993.pa.att.io"},{"serverName": "svr951.pa.att.io"},{"serverName": "svr957.pa.att.io"},{"serverName": "svr956.pa.att.io"},{"serverName": "svr953.pa.att.io"},{"serverName": "svr904.pa.att.io"}],
       "impactedServersAmount": 6,
       "source": "DELL",
       "advisoryId": "9002109",
       "proposedSolution": "This issue is corrected in Smart Update Manager 7.21",
+      "solutionSteps": "The virtual network driver will still load after the message is acknowledged. This issue is corrected in the HP Intel ixn/ixt Drivers for Windows Server, available at the following URLs: HP Intel ixn/ixt Drivers for Windows Server 2008: ftp://ftp.hp.com/pub/softlib2/software1/sc-windows/p92542868/v92296 HP Intel ixn/ixt Drivers for Windows Server 2008 x64 Editions: ftp://ftp.hp.com/pub/softlib2/software1/sc-windows/p910160171/v92297",
+
       "status": "pending",
       "priority": "low",
       "date": "2016-03-11"
@@ -175,12 +207,16 @@
     "alerts": [{
       "id": "3276",
       "symptom": "Command Line Interface Reports Incorrect Exit Code",
+      "symptomDescription": "HP Smart Update Manager (HP SUM) 6.x and 7.10 - Command Line Interface (CLI) Update of Virtual Connect Module or HP Onboard Administrator Reports Incorrect Exit Code When Modules Are Up-to-Date",
+
       "dataCenterId": "6",
       "impactedServers": [{"serverName": "svr993.pa.att.io"}],
       "impactedServersAmount": 1,
       "source": "DELL",
       "advisoryId": "9002109",
       "proposedSolution": "This issue is corrected in Smart Update Manager 7.21",
+      "solutionSteps": "The virtual network driver will still load after the message is acknowledged. This issue is corrected in the HP Intel ixn/ixt Drivers for Windows Server, available at the following URLs: HP Intel ixn/ixt Drivers for Windows Server 2008: ftp://ftp.hp.com/pub/softlib2/software1/sc-windows/p92542868/v92296 HP Intel ixn/ixt Drivers for Windows Server 2008 x64 Editions: ftp://ftp.hp.com/pub/softlib2/software1/sc-windows/p910160171/v92297",
+
       "status": "pending",
       "priority": "low",
       "date": "2016-03-11"
