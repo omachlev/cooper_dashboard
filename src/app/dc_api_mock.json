@@ -63,7 +63,7 @@
       "impactedServers": [{"serverName": "cpd04.nw.att.io"}],
       "impactedServersAmount": 1,
       "source": "HP",
-      "advisoryId": "9002232",
+      "advisoryId": "9002208",
       "proposedSolution": "Resolved in HDD firmware version HPD6",
       "solutionSteps": "This issue is resolved in HDD firmware version HPD6, available as RECOMMENDED * Supplemental Update / Online ROM Flash Component for Linux (x64) - MB2000FCZGH, MB3000FCZGK, and MB4000FCZGL Drives at the following URL: ftp://ftp.hp.com/pub/softlib2/software1/sc-linux-fw/p1884236067/v106970",
 
@@ -95,7 +95,7 @@
   {
     "id": "3",
     "name": "dc-cal-la-sm",
-    "location": "Santa Monica, Loas Angeles, California",
+    "location": "Santa Monica, Los Angeles, California",
     "severity" : "Medium",
     "position": [
       34.019581, -118.480421

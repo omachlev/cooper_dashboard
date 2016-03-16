@@ -10,24 +10,61 @@
             <th>Location</th>
             <th>Server Name</th>
             <th>Source</th>
-            <th>Advisory</th>
+            <th>Advisory Id</th>
             <th>Proposed Solution</th>
             <th>Status</th>
             <th>Priority</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="data in vm.tableData track by $index">
-            <td data-title="ID">{{$index + 1}}</td>
-            <td data-title="Issue">{{data.issue}}</td>
-            <td data-title="Status">{{data.status}}</td>
-                <td data-title="Progress">
-                <md-progress-linear class="table-progress {{data.class}}"
-                                    md-mode="determinate"
-                                    value={{data.progress}}>
-                </md-progress-linear>
-            </td>
+        <tr>
+            <th>3342</th>
+            <th>VMware Host May Fail and Display a Purple Diagnostics Screen</th>
+            <th>dc-cal-sf-rm</th>
+            <th>Richmond, San-Francisco, California</th>
+            <th>comp128.rcloud.att.io, comp129.rcloud.att.io</th>
+            <th>HP</th>
+            <th>9002232</th>
+            <th>upgrade the Smart Array controller firmware to version 6.62</th>
+            <th>Pending</th>
+            <th>High</th>
         </tr>
+        <tr>
+            <th>3349</th>
+            <th>System May Stop Responding</th>
+            <th>dc-cal-sj-wv</th>
+            <th>West Valley, San Jose, California</th>
+            <th>cpd04.nw.att.io</th>
+            <th>HP</th>
+            <th>9002208</th>
+            <th>Resolved in HDD firmware version HPD6</th>
+            <th>Pending</th>
+            <th>High</th>
+        </tr>
+        <tr>
+            <th>3220</th>
+            <th>Random Packet Loss on ProLiant Server Blades</th>
+            <th>dc-cal-la-sm</th>
+            <th>Santa Monica, Los Angeles, California</th>
+            <th>ccrdf03.la.att.io, ccrdf08.la.att.io</th>
+            <th>HP</th>
+            <th>90031002</th>
+            <th>This issue is corrected in the following components: ...</th>
+            <th>Pending</th>
+            <th>Medium</th>
+        </tr>
+
+        <!--<tr ng-repeat="data in vm.tableData track by $index">-->
+            <!--<td data-title="ID">{{$index + 1}}</td>-->
+            <!--<td data-title="Issue">{{data.issue}}</td>-->
+            <!--<td data-title="Status">{{data.status}}</td>-->
+                <!--<td data-title="Progress">-->
+                <!--<md-progress-linear class="table-progress {{data.class}}"-->
+                                    <!--md-mode="determinate"-->
+                                    <!--value={{data.progress}}>-->
+                <!--</md-progress-linear>-->
+            <!--</td>-->
+        <!--</tr>-->
         </tbody>
     </table>
 </div>
