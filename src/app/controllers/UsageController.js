@@ -15,7 +15,7 @@
         vm.chartOptions = {
             chart: {
                 type: 'pieChart',
-                height: 10,
+                height: 1,
 
                 donut: true,
                 x: function (d) { return d.key; },
@@ -31,7 +31,7 @@
         vm.chartOptions2 = {
             chart: {
                 type: 'pieChart',
-                height: 10,
+                height: 1,
                 donut: true,
                 x: function (d) { return d.key; },
                 y: function (d) { return d.y; },
