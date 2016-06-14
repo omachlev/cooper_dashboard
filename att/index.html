@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <img src="images/0.jpg" width="100%" id="rotator">
+
+    <script type="text/javascript">
+
+    (function() {
+        var rotator = document.getElementById('rotator'), //get the element
+            var dir = 'images/',                              //images folder
+            var delayInSeconds = 3,                           //delay in seconds
+            var num = 0,                                      //start number
+            var len = 12;                                      //limit
+        setInterval(function(){                           //interval changer
+            num = (num === len) ? 0 : num;                //reset if limit reached
+            rotator.src = dir + num + '.jpg';                     //change picture
+            num++;                                        //increment counter
+        }, delayInSeconds * 3);
+        }());
+    </script>
+
+<!--img src="attImg.jpg" width="2040" height="1420"-->
+
+
+
+</body>
+</html>

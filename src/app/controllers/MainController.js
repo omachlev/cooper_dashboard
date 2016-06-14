@@ -16,7 +16,7 @@
     vm.showActions = showActions;
     vm.title = $state.current.data.title;
     vm.showSimpleToast = showSimpleToast;
-    vm.toggleRightSidebar = toggleRightSidebar;
+    //vm.toggleRightSidebar = toggleRightSidebar;
 
     navService
       .loadAllItems()

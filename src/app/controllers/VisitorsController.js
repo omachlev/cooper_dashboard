@@ -9,7 +9,7 @@
         var vm = this;
 
         // TODO: move data to the service
-        vm.visitorsChartData = [ {key: 'Critical', y: 2}, { key: 'Warning', y: 9},{ key: 'Informative', y: 17} ];
+        vm.visitorsChartData = [ {key: 'Critical', y: 3}, { key: 'Medium', y: 6},{ key: 'Low', y: 12} ];
 
         vm.chartOptions = {
             chart: {
@@ -22,7 +22,7 @@
                 color: ['#E75753', '#d48900','rgb(0, 150, 136)'],
                 showLabels: false,
                 showLegend: true,
-                title: '28',
+                title: '21',
                 margin: { top: -10 }
             }
         };

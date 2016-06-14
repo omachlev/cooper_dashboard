@@ -9,7 +9,7 @@
         var vm = this;
 
         // TODO: move data to the service
-        vm.warningsChartData = [ {key: 'HP', y: 3543}, { key: 'DELL', y: 2987},{ key: 'IBM', y: 2360} ];
+        vm.warningsChartData = [ {key: 'Voice Only', y: 3543}, { key: 'Unified Communications', y: 2987},{ key: 'Contact Center', y: 2360} ];
 
         vm.chartOptions = {
             chart: {

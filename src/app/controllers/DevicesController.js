@@ -139,7 +139,7 @@
             chart: {
                 type: 'sunburstChart',
                 height: 210,
-                color: d3.scale.category20c(),
+                color: d3.scale.category20b(),
                 duration: 350,
                 showLegend: true,
                 margin: { top: 10, left: -20, right: -20 }
